@@ -354,41 +354,41 @@ class Hand {
 			return hand1Remain.compareTo(hand2Remain);
 	}
 
-	private static int comparePair(Hand hand1, Hand hand2) {
-		Card[] hand1Cards = hand1.getHand();
-		Card[] hand2Cards = hand2.getHand();
-		Set<Card> hand1Set = new HashSet<Card>();
-		Set<Card> hand2Set = new HashSet<Card>();
+	// private static int comparePair(Hand hand1, Hand hand2) {
+	// 	Card[] hand1Cards = hand1.getHand();
+	// 	Card[] hand2Cards = hand2.getHand();
+	// 	Set<Card> hand1Set = new HashSet<Card>();
+	// 	Set<Card> hand2Set = new HashSet<Card>();
 
-		Card hand1PairCard = null;
-		Card hand2PairCard = null;
-		for (int i = 0; i < hand1Cards.length; i++) {
-			if (!hand1Set.contains(hand1Cards[i]))
-				hand1Set.add(hand1Cards[i]);
-			else
-				hand1PairCard = hand1Cards[i];
-		}
-		for (int i = 0; i < hand2Cards.length; i++) {
-			if (!hand2Set.contains(hand2Cards[i]))
-				hand2Set.add(hand2Cards[i]);
-			else
-				hand2PairCard = hand2Cards[i];
-		}
+	// 	Card hand1PairCard = null;
+	// 	Card hand2PairCard = null;
+	// 	for (int i = 0; i < hand1Cards.length; i++) {
+	// 		if (!hand1Set.contains(hand1Cards[i]))
+	// 			hand1Set.add(hand1Cards[i]);
+	// 		else
+	// 			hand1PairCard = hand1Cards[i];
+	// 	}
+	// 	for (int i = 0; i < hand2Cards.length; i++) {
+	// 		if (!hand2Set.contains(hand2Cards[i]))
+	// 			hand2Set.add(hand2Cards[i]);
+	// 		else
+	// 			hand2PairCard = hand2Cards[i];
+	// 	}
 
-		if (hand1PairCard.compareTo(hand2PairCard) != 0)
-			return hand1PairCard.compareTo(hand2PairCard);
-		else {
-			while (!hand1Set.isEmpty() && !hand2Set.isEmpty()) {
-				Card tempHand1Max = Collections.max(hand1Set);
-				Card tempHand2Max = Collections.max(hand2Set);
-				if (tempHand1Max.compareTo(tempHand2Max) != 0)
-					return tempHand1Max.compareTo(tempHand2Max);
-				hand1Set.remove(tempHand1Max);
-				hand2Set.remove(tempHand2Max);
-			}
-		}
-		return -10000;
-	}
+	// 	if (hand1PairCard.compareTo(hand2PairCard) != 0)
+	// 		return hand1PairCard.compareTo(hand2PairCard);
+	// 	else {
+	// 		while (!hand1Set.isEmpty() && !hand2Set.isEmpty()) {
+	// 			Card tempHand1Max = Collections.max(hand1Set);
+	// 			Card tempHand2Max = Collections.max(hand2Set);
+	// 			if (tempHand1Max.compareTo(tempHand2Max) != 0)
+	// 				return tempHand1Max.compareTo(tempHand2Max);
+	// 			hand1Set.remove(tempHand1Max);
+	// 			hand2Set.remove(tempHand2Max);
+	// 		}
+	// 	}
+	// 	return -10000;
+	// }
 
 	static String getWinner(Hand hand1, Hand hand2) {
 		HandRank hand1Rank = hand1.getHandRank();
