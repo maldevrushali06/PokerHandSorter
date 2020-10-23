@@ -17,5 +17,5 @@ jar cvfe pokerhandplayer.jar PokerHandPlayer *.class
 
 ### To Run/Execute the jar;
 ```sh
-jcat poker-hands.txt | java -jar pokerhandplayer.jar
+cat poker-hands.txt | java -jar pokerhandplayer.jar
 ```
